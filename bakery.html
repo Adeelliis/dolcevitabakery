@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лендинг пекарни с продуктами и ценами">
+    <meta name="location" content="Казахстан">
+    <title>Пекарня в Казахстане</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f1e0c6;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #d09f66;
+            font-size: 36px;
+        }
+
+        section {
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #fff;
+        }
+
+        .product {
+            width: 200px;
+            background-color: #f1e0c6;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            color: #d09f66;
+            font-size: 20px;
+        }
+
+        .cart {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .cart button {
+            background-color: #d09f66;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dolce Vita Bakery</h1>
+    <p>Вкусные и свежие изделия прямо из печи</p>
+</header>
+
+<section>
+    <div class="product" data-name="Круассан" data-price="500">
+        <img src="images/1.webp" alt="Круассан">
+        <h3>Круассан</h3>
+        <p>Легкое и воздушное тесто с масляным вкусом.</p>
+        <p class="price">Цена: 500 ₸</p>
+        <p>Вес: 150 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Хлеб" data-price="300">
+        <img src="images/2.webp" alt="Хлеб">
+        <h3>Хлеб</h3>
+<p>Традиционный пшеничный хлеб с хрустящей корочкой.</p>
+        <p class="price">Цена: 300 ₸</p>
+        <p>Вес: 600 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Пончик" data-price="350">
+        <img src="images/3.webp" alt="Пончик">
+        <h3>Пончик</h3>
+<p>Сладкие пончики с разнообразными начинками.</p>
+        <p class="price">Цена: 350 ₸</p>
+        <p>Вес: 100 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Булочка с сыром" data-price="400">
+        <img src="images/4.webp" alt="Булочка с сыром">
+        <h3>Булочка с сыром</h3>
+<p>Мягкая булочка с начинкой из расплавленного сыра.</p>
+        <p class="price">Цена: 400 ₸</p>
+        <p>Вес: 120 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Пирог" data-price="800">
+        <img src="images/5.webp" alt="Пирог">
+        <h3>Пирог</h3>
+ <p>Пирог с ягодной начинкой в слоеном тесте.</p>
+        <p class="price">Цена: 800 ₸</p>
+        <p>Вес: 400 г</p> 
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Киш" data-price="760">
+        <img src="images/6.webp" alt="Киш">
+        <h3>Киш</h3>
+<p>Французский открытый пирог с нежной начинкой из яиц, сливок и сыра.
+</p>
+        <p class="price">Цена: 760 ₸</p>
+        <p>Вес: 300 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Пралине" data-price="1100">
+        <img src="images/7.jpg" alt="Пралине">
+        <h3>Пралине</h3>
+<p>Сладкая ореховая паста с карамелизированным сахаром.</p>
+        <p class="price">Цена: 1100 ₸</p>
+        <p>Вес: 600 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+    <div class="product" data-name="Эклеры" data-price="1500">
+        <img src="images/8.jpg" alt="Эклеры">
+        <h3>Эклеры</h3>
+<p>Заварные пирожные с воздушным кремом и шоколадной глазурью.</p>
+        <p class="price">Цена: 1500 ₸</p>
+        <p>Вес: 990 г</p>
+        <button onclick="addToCart(this)">Добавить в корзину</button>
+    </div>
+</section>
+
+<div class="cart">
+    <h2>Ваша корзина</h2>
+    <ul id="cart-items"></ul>
+    <p>Общая сумма: <span id="total-price">0</span> ₸</p>
+    <button onclick="clearCart()">Очистить корзину</button>
+</div>
+
+<script>
+    let cart = [];
+
+    function addToCart(button) {
+        let product = button.parentElement;
+        let name = product.getAttribute("data-name");
+        let price = parseInt(product.getAttribute("data-price"));
+        
+        let existingProduct = cart.find(item => item.name === name);
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+        updateCart();
+    }
+
+    function removeFromCart(name) {
+        let index = cart.findIndex(item => item.name === name);
+        if (index !== -1) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+            } else {
+                cart.splice(index, 1);
+            }
+        }
+        updateCart();
+    }
+
+    function updateCart() {
+        let cartList = document.getElementById("cart-items");
+        let totalPrice = document.getElementById("total-price");
+        cartList.innerHTML = "";
+        let total = 0;
+
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            let li = document.createElement("li");
+            li.innerHTML = `${item.name} (${item.quantity} шт) - ${item.price * item.quantity} ₸ <button onclick="removeFromCart('${item.name}')">Удалить</button>`;
+            cartList.appendChild(li);
+        });
+
+        totalPrice.textContent = total;
+    }
+
+    function clearCart() {
+        cart = [];
+        updateCart();
+    }
+</script>
+
+</body>
+</html>
